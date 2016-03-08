@@ -39,3 +39,19 @@ def user_form_view(request):
                                              'objects': UserProfile.objects.all()
                                             }
                    )
+
+
+def delete_profile_view(request, pk=None):
+
+    if request.user.is_staff or request.user.is_superuser:
+        instance = get_object_or_404(UserProfile, pk=pk)
+        instance.delete()
+        messages.add_message(request,
+                             messages.INFO,
+                             '%(instance)s was successfully deleted' % {'instance': instance})
+
+        return HttpResponseRedirect(reverse('user_form_view'))
+
+    else:
+        raise PermissionDenied
+

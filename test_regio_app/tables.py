@@ -7,9 +7,9 @@ class UserProfileTable(tables.Table):
     last_name = tables.Column(verbose_name = 'Last Name', attrs={"td": {"width": "1.0 cm"}})
     iban = tables.Column(verbose_name = 'IBAN', attrs={"td": {"width": "1.0 cm"}})
     '''update = tables.TemplateColumn(' <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#update_user_profile_{{ record.pk }}"> Update </button> {% include "partials/modal_update.html" with record=record%}',
-                                 verbose_name = 'Update Profile', attrs={"td": {"width": "1.0cm", "align": "center"}})
+                                 verbose_name = 'Update Profile', attrs={"td": {"width": "1.0cm", "align": "center"}})'''
     delete = tables.TemplateColumn(' <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModalDelete_{{ record.pk }}"> Delete </button> {% include "partials/modal_delete.html" with record=record%}',
-                                  verbose_name = 'Delete Profile', attrs={"td": {"width": "1.0cm", "align": "center"}})'''
+                                  verbose_name = 'Delete Profile', attrs={"td": {"width": "1.0cm", "align": "center"}})
 
     class Meta:
         model = UserProfile
