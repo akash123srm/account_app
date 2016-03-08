@@ -1,0 +1,46 @@
+body
+{
+    background-color: #eee;
+}
+
+h1{
+  color: grey;
+}
+.bs-docs-header{
+padding-top: 20px;
+padding-bottom: 20px;
+font-size: 35px;
+text-align: left;
+text-shadow: 0 1px 0 rgba(0,0,0,.1);
+    background-color: dimgrey;
+margin-bottom: 20px;
+}
+
+.bs-docs-footer {
+margin-top: 20px;
+padding-top: 120px;
+    background-color: dimgrey;
+    height: 20%;
+}
+
+#user_add {
+   background-color: white;
+}
+
+#add_user_profile {
+    background-color: white;
+
+    border: 1px black solid;
+
+
+}
+
+.statistics {
+    margin-top:10px;
+    width:1000px;
+    margin-left:112px;
+}
+
+.messages {
+     margin-top:10px;
+}
