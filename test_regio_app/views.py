@@ -15,6 +15,7 @@ from django.http import HttpResponseForbidden
 
 def user_form_view(request):
 
+  if request.user.is_staff or request.user.is_superuser:
      if request.method == 'POST':
          form = UserProfileForm(request.POST)
          if form.is_valid():
@@ -39,6 +40,8 @@ def user_form_view(request):
                                              'objects': UserProfile.objects.all()
                                             }
                    )
+  else:
+      raise PermissionDenied
 
 
 def delete_profile_view(request, pk=None):
@@ -54,4 +57,24 @@ def delete_profile_view(request, pk=None):
 
     else:
         raise PermissionDenied
+
+
+def update_profile_view(request, pk=None):
+
+   if request.user.is_staff or request.user.is_superuser:
+       instance = get_object_or_404(UserProfile, pk=pk)
+       form = UserProfileForm(data=request.POST or None, instance=instance)
+
+       if form.is_valid():
+               form.save()
+               messages.add_message(request,
+                                messages.INFO,
+                                '%(instance)s was successfully updated' % {'instance': instance})
+               return HttpResponseRedirect(reverse('user_form_view'))
+
+       return render(request, 'partials/modal_update.html', {'form': form,
+                                                             'instance': instance
+                                                            })
+   else:
+       raise PermissionDenied
 

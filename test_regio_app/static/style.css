@@ -6,6 +6,7 @@ body
 h1{
   color: grey;
 }
+
 .bs-docs-header{
 padding-top: 20px;
 padding-bottom: 20px;
@@ -35,6 +36,19 @@ padding-top: 120px;
 
 }
 
+#update_user_profile {
+    background-color: white;
+    border: 1px black solid;
+    width:600px;
+}
+
+#update_button {
+    width:60px;
+    height: 30px;
+    font-size: 11.7px;
+}
+
+
 .statistics {
     margin-top:10px;
     width:1000px;
@@ -44,3 +58,4 @@ padding-top: 120px;
 .messages {
      margin-top:10px;
 }
+
