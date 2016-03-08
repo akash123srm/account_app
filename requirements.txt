@@ -1,0 +1,5 @@
+Django==1.9
+django-bootstrap3==4.11.0
+django-tables2
+django-staticfiles
+django-localflavor
