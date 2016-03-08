@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'test_regio_app',
     'localflavor',
-    'bootstrap3',
+    #'bootstrap3',
     'django_tables2',
 )
 
@@ -52,9 +52,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'regio_test.urls'
+ROOT_URLCONF = 'test_regio.urls'
 
-WSGI_APPLICATION = 'regio_test.wsgi.application'
+WSGI_APPLICATION = 'test_regio.wsgi.application'
 
 
 # Database
