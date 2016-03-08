@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load bootstrap3 static %}
+    <title></title>
+</head>
+<body>
+ <div class="modal fade" id="add_user_profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">User Profile Form</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="add_user_profile_form" action="{% url 'user_form_view' %}" method="post">
+                        {% csrf_token %}
+
+                        <div id="row-2" class="row">
+                            <div class="col-md-6">
+                                <div id="field1">
+                                    {% bootstrap_field form.first_name %}
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="row-2" class="row">
+                            <div class="col-md-6">
+                                <div id="field2">
+                                    {% bootstrap_field form.last_name %}
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="row-2" class="row">
+                            <div class="col-md-6">
+                                <div id="field3">
+                                    {% bootstrap_field form.iban %}
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div id="row-2" class="row">
+                                <div class="col-md-6">
+                                    <div id="submit_form" align="left">
+                                        <input type="submit" name="Submit" value="Submit"/>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

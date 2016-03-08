@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'test_regio_app',
     'localflavor',
-    #'bootstrap3',
+    'bootstrap3',
     'django_tables2',
 )
 
